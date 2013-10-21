@@ -1,0 +1,69 @@
+---
+layout: presentation
+title: Sprint3
+---
+
+<section>
+  <section>
+    <p><img style="box-shadow: none;" src="../../media/blomma-graphs-logo.png" alt="blomma-graphs-logo"/></p>
+    <h1>Sprint 3</h1>
+    <h3>9/09 - 15/09</h3>
+  </section>
+  <section>
+    <h2>Agenda</h2>
+    <ol>
+      <li>Basic Stream Scheduler</li>
+      <li>Custom Stream Scheduler</li>
+    </ol>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h1>Basic Stream Scheduler</h1>
+  </section>
+  <section>
+    <h2>Basic idea</h2>
+    <ul>
+      <li>Basic scheduler takes one TaskGraph</li>
+      <li>When scheduling multiple TaskGraphs: merge them into one</li>
+      <li>Schedule as normal</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Procedure</h2>
+    <ul>
+      <li>BasicStreamScheduler gets list of TaskGraphs</li>
+      <li>Merges them into one graph</li>
+      <li>Passes it to a BasicScheduler</li>
+      <li>Returns result from BasicScheduler</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h1>Custom Stream Scheduler</h1>
+  </section>
+  <section>
+      <h2>Basic idea</h2>
+      <ul>
+          <li>Minimize the gaps.</li>
+          <li>Stick to the deadlines.</li>
+          <li>readySet: set of ready tasks to be scheduled.</li>
+          <li>scheduledTaskList: holds scheduled tasks.</li>
+          <li>gap: EST - endOfLastTask</li>
+      </ul>
+  </section>
+  <section>
+      <h2>Procedure</h2>
+      <ul>
+          <li>Initialize the readySet.</li>
+          <li>Loop (task and CPUs):</li>
+          <li>Compute the gap for every task per CPU.</li>
+          <li>Choose task due to the deadlines and gap.</li>
+          <li>Add task to scheduledTaskList</li>
+          <li>Fill readySet with new tasks.</li>
+      </ul>
+  </section>
+</section>
