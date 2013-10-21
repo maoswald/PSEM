@@ -1,0 +1,8 @@
+*.swp
+*.swo
+/*.stg
+
+/.project
+/.classpath
+/bin/
+/_site/
