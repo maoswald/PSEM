@@ -1,0 +1,144 @@
+---
+layout: presentation
+title: Sprint1
+---
+
+<section>
+  <section>
+    <p><img style="box-shadow: none;" src="media/makandra.png" alt="makandra-logo"/></p>
+    <h1>Cucumber & RSpec</h1>
+    <h1>Ruby on Rails</h1>
+    <h3>Makandra GmbH</h3>
+    <h4>Manuel Oswald</h4>
+  </section>
+  <section>
+    <h2>Inhaltsverzeichnis</h2>
+    <ol>
+      <li>Makandra GmbH</li>
+      <li>Was ist Ruby, Rails, Cucumber und RSpec</li>
+      <li>Ruby on Rails</li>
+      <li>Cucumber</li>
+      <li>RSpec</li>
+      <li>TDD/BDD</li>
+      <li>Quellen</li>
+      <li>Fazit</li>
+    </ol>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>1. Makandra GmbH</h1>
+  </section>
+  <section>
+    <h2>Allgemein</h2>
+    <ul>
+      <li>ca. 17 Mitarbeiter, hauptsächlich Entwickler</li>
+      <li>Gründung 2009</li>
+      <li>Aiti-Park Augsburg</li>
+    </ul>
+    <hr>
+    <ul>
+      <li>Startup-Beratung</li>
+      <li>Maßgeschneiderte Software</li>
+      <li>Security Audit/Workshops</li>
+      <li>Support</li>
+      <li>Hosting & Operations</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Eigene Produkte</h2>
+    <ul>
+      <li>Time Machine</li>
+      <li>Makandra Cards</li>
+      <li>Project Hero</li>
+      <li>Webentwickler-Jobs.de</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Things We Use</h2>
+    <p><img style="box-shadow: none;" src="media/thingsWeUse.png" alt="thingsWeUse.png"></p>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>2. Was ist Ruby, Rails, Cucumber und RSpec</h1>
+  </section>
+  <section>
+    <ul>
+      <li>Ruby: höhere Programmiersprache, interpretiert, oo, prozedural, funktional, duck-typing</li>
+      <li>Rails: quelloffenes Web Application Framework</li>
+      <li>Cucumber: Behavior Driven Development Tool</li>
+      <li>RSpec: Behavior Driven Development Framework</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>3. Ruby on Rails</h1>
+    <ul>
+      <li>Ähnlichkeit zu Django</li>
+      <li>Prinzipien:               </li>
+    </ul>
+    <ul>
+      <li>MVC</li>
+      <li>DRY: don't repeat yourself</li>
+      <li>Convention over configuration</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Database Migrations</h2>
+    <p>
+            Reveal.js comes with a few themes built in: <br>
+            <a href="?#/themes">Default</a> -
+            <a href="?theme=sky#/themes">Sky</a> -
+            <a href="?theme=beige#/themes">Beige</a> -
+            <a href="?theme=simple#/themes">Simple</a> -
+            <a href="?theme=serif#/themes">Serif</a> -
+            <a href="?theme=night#/themes">Night</a> <br>
+            <a href="?theme=moon.css#/themes">Moon</a> -
+            <a href="?theme=simple.css#/themes">Simple</a> -
+            <a href="?theme=solarized.css#/themes">Solarized</a>
+    </p>
+  </section>
+</section>
+<section>
+  <section>
+   <h1>4. Cucumber</h1>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>5. RSpec</h1>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>6. TDD/BDD</h1>
+  </section>
+  <section>
+    <h2>Ablauf</h2>
+    <img style="box-shadow: none;" src="" alt="Pic-RSpec-Buch">
+  </section>
+  <section data-transition="cube">
+    <h2>Charts</h2>
+    <img style="box-shadow: none;" src="" alt="Chart-Pres">
+  </section>
+</section>
+  <section data-transition="zoom">
+    <h1>7. Quellen</h1>
+    <ul>
+      <li><p><a href="http://www.makandra.de">makandra.de</a> & <a href= "http://www.makandra.com">makandra.com</a></p></li>
+      <li>Agile Web Development with Rails 4 - Sam Ruby, Dave Thomas, David Heinemeier Hansson</li>
+      <li>The RSpec Book - David Chelimskey</li>
+      <li>wikipedia.org </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>Fazit</h1>
+  </section>
+  <section>
+    <p>ENDE</p>
+  </section>
+</section>
