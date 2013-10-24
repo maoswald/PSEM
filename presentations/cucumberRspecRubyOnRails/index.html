@@ -133,34 +133,34 @@ title: CucumberRSpecRails
 
 <!-- 3. Testen -->
 <section>
-    <section>
-        <h1>3 .Testen</h1>
-    </section>
-    <section>
-        <h2>Warum ist es sinnvoll Software zu testen?</h2>
-    </section>
-    <section>
-        <ul>
-            <li>Software ist komplex</li>
-            <li>Fehlerfreiere Software</li>
-            <li>Regressionsbugs vorbeugen</li>
-            <!-- requirements evolve during implementation -->
-            <li>Beugt Typisierungsfehlern vor (dyn. Sprachen)</li>
-            <!-- andere Leute können ins Project -->
-        </ul>
-    </section>
-    <section>
-        <h3>Integration Test</h3>
-        <ul>
-            <li>Full Stack</li>
-            <li>Verhalten des Systems wird von "außen" getestet</li>
-        </ul>
-        <h3>Unit Test</h3>
-        <ul>
-            <li>isolierte, konkrete Funktionalitäten</li>
-            <li>Core Cases</li>
-        </ul>
-    </section>
+  <section>
+      <h1>3 .Testen</h1>
+  </section>
+  <section>
+      <h2>Warum ist es sinnvoll Software zu testen?</h2>
+  </section>
+  <section>
+    <ul>
+      <li>Software ist komplex</li>
+      <li>Fehlerfreiere Software</li>
+      <li>Regressionsbugs vorbeugen</li>
+      <!-- requirements evolve during implementation -->
+      <li>Beugt Typisierungsfehlern vor (dyn. Sprachen)</li>
+      <!-- andere Leute können ins Project -->
+    </ul>
+  </section>
+  <section>
+    <h3>Integration Test</h3>
+    <ul>
+        <li>Full Stack</li>
+        <li>Verhalten des Systems wird von "außen" getestet</li>
+    </ul>
+    <h3>Unit Test</h3>
+    <ul>
+        <li>isolierte, konkrete Funktionalitäten</li>
+        <li>Core Cases</li>
+    </ul>
+  </section>
 </section>
 
 <!-- 4. Cucumber -->
@@ -169,23 +169,47 @@ title: CucumberRSpecRails
       <h2>4. Cucumber</h2>
   </section>
   <section>
-    <h2>Beispiel</h2>
+    <ul>
+      <li>Given: Ausgangszustand</li>
+      <li>When: Aktion</li>
+      <li>Then: Ergebnis</li>
+    </ul>
+  </section>
+  <section>
     <pre><code data-trim contenteditable>
       Scenario: add an item to the shopping cart
-          Given an article with the name "Nintendo Wii"
-          When I am on the homepage
-            And I follow "Nintendo Wii"
-            And I press "Add to cart"
-          Then I should see "Item was added to cart"
+      Given an article with the name "Nintendo Wii"
+      When I am on the homepage
+        And I follow "Nintendo Wii"
+        And I press "Add to cart"
+      Then I should see "Item was added to cart"
     </code></pre>
   </section>
 <section>
 
 <!-- 5. Spec -->
 <section>
-    <section>
-        <h2>5. RSpec</h2>
-    </section>
+  <section>
+      <h2>5. RSpec</h2>
+  </section>
+  <section>
+    <ul>
+      <li>Describe: </li>
+      <li>Context:</li>
+      <li>It:</li>
+    </ul>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      describe "RSpec Greeter" do
+      it "should say 'Hello RSpec!' when it receives the greet() message" do
+      greeter = RSpecGreeter.new
+      greeting = greeter.greet
+      greeting.should == "Hello RSpec!"
+      end
+      end
+    </code></pre>
+  </section>
 </section>
 
 <!-- 6. TDD -->
