@@ -146,6 +146,12 @@ title: CucumberRSpecRails
   <section>
     <h2>Warum ist es sinnvoll Software mit Softwaretests zu testen?</h2>
   </section>
+  <section data-background="media/feat0.png">
+  </section>
+  <section data-background="media/feat1.png">
+  </section>
+  <section data-background="media/feat2.png">
+  </section>
   <section>
     <ul>
       <li>Software ist komplex</li>
@@ -159,12 +165,6 @@ title: CucumberRSpecRails
       <p> > Schnelles Feedback</p>
       <p> >>>>> Häufige Releases</p>
     </ul>
-  </section>
-  <section data-background="media/feat0.png">
-  </section>
-  <section data-background="media/feat1.png">
-  </section>
-  <section data-background="media/feat2.png">
   </section>
   <section>
     <h3>Integration Test</h3>
@@ -214,11 +214,12 @@ title: CucumberRSpecRails
   <section>
     <p>features/step_definitions/coffee_steps.rb</p>
     <pre><code data-trim contenteditable>
+
       Given /there are (\d+) coffees left in the machine/ do |n|
         @machine = Machine.new(n.to_i)
       end
-    </code>
-    </pre>
+
+    </code></pre>
   </section>
 
   <section>

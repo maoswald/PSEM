@@ -79,7 +79,7 @@ title: CucumberRSpecRails
     <h2>2. Ruby on Rails</h2>
   </section>
   <section>
-    <div>Ruby:</div>
+    <h2>Ruby</h2>
     <ul>
       <li>höhere Programmiersprache</li>
       <li>interpretiert</li>
@@ -88,8 +88,16 @@ title: CucumberRSpecRails
       <li>funktional</li>
       <li>duck-typing</li>
     </ul>
-    <br>
-    <p>Rails: quelloffenes Web Application Framework</p>
+    <img style="box-shadow: none; float: right;" src="media/ruby.png" alt="">
+  </section>
+  <section>
+    <p><img style="box-shadow: none;" src="media/rails.png" alt=""></p>
+    <ul>
+      <li>Web-Framework</li>
+      <li>Open Source</li>
+      <li>Gutes System aus Bibliotheken</li>
+      <li>Hohe Produktivität</li>
+    </ul>
   </section>
   <section>
     <h2>Grundprinzipien</h2>
@@ -133,10 +141,10 @@ title: CucumberRSpecRails
 <!-- 3. Testen -->
 <section>
   <section>
-      <h2>3 .Testen</h2>
+    <h2>3 .Testen</h2>
   </section>
   <section>
-      <h2>Warum ist es sinnvoll Software zu testen?</h2>
+    <h2>Warum ist es sinnvoll Software mit Softwaretests zu testen?</h2>
   </section>
   <section>
     <ul>
@@ -146,20 +154,30 @@ title: CucumberRSpecRails
       <!-- requirements evolve during implementation -->
       <li>Typisierungsfehlern vorbeugen (dyn. Sprachen)</li>
       <!-- andere Leute können ins Project -->
+      <li>Automatisierte Qualitätskontrolle</li>
+      <p> > Kein händisches Testen</p>
+      <p> > Schnelles Feedback</p>
+      <p> >>>>> Häufige Releases</p>
     </ul>
+  </section>
+  <section data-background="media/feat0.png">
+  </section>
+  <section data-background="media/feat1.png">
+  </section>
+  <section data-background="media/feat2.png">
   </section>
   <section>
     <h3>Integration Test</h3>
     <ul>
-        <li>Full Stack</li>
-        <li>Verhalten des Systems wird von "außen" getestet</li>
+      <li>Full Stack</li>
+      <li>Verhalten des Systems wird von "außen" getestet</li>
     </ul>
   </section>
   <section>
     <h3>Unit Test</h3>
     <ul>
-        <li>isolierte, konkrete Funktionalitäten</li>
-        <li>Corner Cases</li>
+      <li>isolierte, konkrete Funktionalitäten</li>
+      <li>Corner Cases</li>
     </ul>
   </section>
 </section>
@@ -195,12 +213,13 @@ title: CucumberRSpecRails
   </section>
   <section>
     <p>features/step_definitions/coffee_steps.rb</p>
-    <pre><code>
+    <pre><code data-trim contenteditable>
+      
       Given /there are (\d+) coffees left in the machine/ do |n|
         @machine = Machine.new(n.to_i)
       end
-    </code>
-    </pre>
+
+    </code></pre>
   </section>
 
   <section>
@@ -224,6 +243,7 @@ title: CucumberRSpecRails
     </ul>
   </section>
   <section>
+    <p>spec/models/movielist_spec.rb</p>
     <pre><code data-trim contenteditable>
       describe MovieList do
         context "when first created" do
@@ -236,6 +256,7 @@ title: CucumberRSpecRails
     </code></pre>
   </section>
   <section>
+    <p>spec/stack_spec.rb</p>
     <pre><code data-trim contenteditable>
       describe Stack do
         before(:each) do
@@ -256,6 +277,7 @@ title: CucumberRSpecRails
     </code></pre>
   </section>
   <section>
+    <p>Test Output</p>
     <pre><code data-trim contenteditable>
       Stack
         #pop
