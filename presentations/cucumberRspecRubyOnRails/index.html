@@ -194,21 +194,21 @@ title: CucumberRSpecRails
   </section>
   <section>
     <ul>
-      <li>Describe: </li>
-      <li>Context:</li>
+      <li>Describe: Methodenname</li>
+      <li>Context: Context</li>
       <li>It:</li>
     </ul>
   </section>
   <section>
     <pre><code data-trim contenteditable>
-      ddescribe MovieList do
+      describe MovieList do
         context "when first created" do
-        it "is empty" do
-        movie_list = MovieList.new
-        movie_list.should be_empty
+          it "is empty" do
+            movie_list = MovieList.new
+            movie_list.should be_empty
+          end
         end
-        end
-        end
+      end
     </code></pre>
   </section>
 </section>
