@@ -165,13 +165,21 @@ title: CucumberRSpecRails
 
 <!-- 4. Cucumber -->
 <section>
-    <section>
-        <h2>4. Cucumber</h2>
-    </section>
-    <section>
-
-    </section>
-</section>
+  <section>
+      <h2>4. Cucumber</h2>
+  </section>
+  <section>
+    <h2>Beispiel</h2>
+    <pre><code data-trim contenteditable>
+      Scenario: add an item to the shopping cart
+          Given an article with the name "Nintendo Wii"
+          When I am on the homepage
+            And I follow "Nintendo Wii"
+            And I press "Add to cart"
+          Then I should see "Item was added to cart"
+    </code></pre>
+  </section>
+<section>
 
 <!-- 5. Spec -->
 <section>
@@ -186,10 +194,21 @@ title: CucumberRSpecRails
       <h2>6. Test Driven Development</h2>
   </section>
   <section>
-    <p><img style="box-shadow: none;" src="media/CucCircle1.png" alt="Pic-RSpec-Buch"></p>
+    <ol>
+      <li>Test schreiben</li>
+      <li>Test failed</li>
+      <li>Funktion implementieren bis Test erfolgreich</li>
+    </ol>
   </section>
-   <section>
-    <p><img style="box-shadow: none;" src="media/CucCircle2.png" alt="Pic-RSpec-Buch"></p>
+  <section>
+    <ul>
+      <li>modularer Code</li>
+      <li>gute OO-Struktur durch Refactoring</li>
+      <li>minimale Implementierung</li>
+    </ul>
+  </section>
+  <section>
+    <p><img style="box-shadow: none;" src="media/CucCircle1.png" alt="Pic-RSpec-Buch"></p>
   </section>
   <section>
     <p><img style="box-shadow: none;" src="" alt="Chart-Pres"></p>
