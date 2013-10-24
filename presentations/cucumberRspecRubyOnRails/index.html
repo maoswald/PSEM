@@ -79,7 +79,7 @@ title: CucumberRSpecRails
     <h2>2. Ruby on Rails</h2>
   </section>
   <section>
-    <div>Ruby <img style="box-shadow: none;" src="media/ruby.png" alt=""></div>
+    <h2>Ruby</h2>
     <ul>
       <li>höhere Programmiersprache</li>
       <li>interpretiert</li>
@@ -88,9 +88,10 @@ title: CucumberRSpecRails
       <li>funktional</li>
       <li>duck-typing</li>
     </ul>
+    <img style="box-shadow: none; float: right;" src="media/ruby.png" alt="">
   </section>
   <section>
-    <p>Rails <img style="box-shadow: none;" src="media/rails.png" alt=""></p>
+    <p><img style="box-shadow: none;" src="media/rails.png" alt=""></p>
     <ul>
       <li>Web-Framework</li>
       <li>Open Source</li>
@@ -156,7 +157,7 @@ title: CucumberRSpecRails
       <li>Automatisierte Qualitätskontrolle</li>
       <p> > Kein händisches Testen</p>
       <p> > Schnelles Feedback</p>
-      <p> >>>>> Haufige Releases</p>
+      <p> >>>>> Häufige Releases</p>
     </ul>
   </section>
   <section>
@@ -206,7 +207,7 @@ title: CucumberRSpecRails
   </section>
   <section>
     <p>features/step_definitions/coffee_steps.rb</p>
-    <pre><code>
+    <pre><code data-trim contenteditable>
       Given /there are (\d+) coffees left in the machine/ do |n|
         @machine = Machine.new(n.to_i)
       end
@@ -235,6 +236,7 @@ title: CucumberRSpecRails
     </ul>
   </section>
   <section>
+    <p>spec/models/movielist_spec.rb</p>
     <pre><code data-trim contenteditable>
       describe MovieList do
         context "when first created" do
@@ -247,6 +249,7 @@ title: CucumberRSpecRails
     </code></pre>
   </section>
   <section>
+    <p>spec/stack_spec.rb</p>
     <pre><code data-trim contenteditable>
       describe Stack do
         before(:each) do
@@ -267,6 +270,7 @@ title: CucumberRSpecRails
     </code></pre>
   </section>
   <section>
+    <p>Test Output</p>
     <pre><code data-trim contenteditable>
       Stack
         #pop
