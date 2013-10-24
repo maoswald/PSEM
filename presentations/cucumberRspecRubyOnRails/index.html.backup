@@ -3,11 +3,12 @@ layout: presentation
 title: CucumberRSpecRails
 ---
 
+<!-- Start -->
 <section>
   <section>
     <p><img style="box-shadow: none;" src="media/makandra_small.png" alt="makandra-logo"/></p>
-    <h1>Cucumber & RSpec</h1>
-    <h1>Ruby on Rails</h1>
+    <h2>Webentwicklung</h2>
+    <h2>Ruby on Rails</h2>
     <h3>Makandra GmbH</h3>
     <h4>Manuel Oswald</h4>
     <p><small>
@@ -24,23 +25,28 @@ title: CucumberRSpecRails
     <h2>Inhaltsverzeichnis</h2>
     <ol>
       <li>Makandra GmbH</li>
-      <li>Was ist Ruby, Rails, Cucumber und RSpec</li>
       <li>Ruby on Rails</li>
+      <li>Testen</li>
       <li>Cucumber</li>
       <li>RSpec</li>
-      <li>TDD/BDD</li>
+      <li>TDD</li>
+      <li>Workflow</li>
       <li>Quellen</li>
       <li>Fazit</li>
     </ol>
   </section>
 </section>
+
+<!-- 1. Makandra GmbH -->
 <section>
   <section>
-    <h1>1. Makandra GmbH</h1>
+    <h2>1. Makandra GmbH</h2>
   </section>
   <section>
     <h2>Allgemein</h2>
-      <p>ca. 17 Mitarbeiter, hauptsächlich Entwickler</p>
+      <p>12 Entwickler</p>
+      <p>2 Administratoren</p>
+      <p>2 Backoffice & Vertrieb</p>
       <p>Gründung 2009</p>
       <p>Aiti-Park Augsburg</p>
     <hr>
@@ -66,29 +72,31 @@ title: CucumberRSpecRails
     <p><img style="box-shadow: none;" src="media/thingsWeUse.png" alt="thingsWeUse.png"></p>
   </section>
 </section>
+
+<!-- 2. Ruby on Rails -->
 <section>
   <section>
-    <h1>2. Was ist Ruby, Rails, Cucumber und RSpec</h1>
+    <h2>2. Ruby on Rails</h2>
   </section>
   <section>
+    <div>Ruby:</div>
     <ul>
-      <li>Ruby: höhere Programmiersprache, interpretiert, oo, prozedural, funktional, duck-typing</li>
-      <li>Rails: quelloffenes Web Application Framework</li>
-      <li>Cucumber: Behavior Driven Development Tool</li>
-      <li>RSpec: Behavior Driven Development Framework</li>
+      <li>höhere Programmiersprache</li>
+      <li>interpretiert</li>
+      <li>Objektorientiert</li>
+      <li>prozedural</li>
+      <li>funktional</li>
+      <li>duck-typing</li>
     </ul>
+    <br>
+    <p>Rails: quelloffenes Web Application Framework</p>
   </section>
-</section>
-<section>
   <section>
-    <h1>3. Ruby on Rails</h1>
-    <ul>
-      <li>Ähnlichkeit zu Django</li>
-      <li>Prinzipien:</li>
-    </ul>
+    <h2>Grundprinzipien</h2>
     <ul>
       <li>MVC</li>
       <li>DRY: don't repeat yourself</li>
+      <!-- http://openbook.galileocomputing.de/ruby_on_rails/ruby_on_rails_01_005.htm#mjaa00d2e9c39b9d46a309d898e79f33bd -->
       <li>Convention over configuration</li>
     </ul>
   </section>
@@ -101,38 +109,208 @@ title: CucumberRSpecRails
     <p><img style="box-shadow: none;" src="media/MVCRails.png" alt="Model-View-Control"></p>
   </section>
   <section>
+    <h2>Convention over configuration</h2>
+    <p>Beispiele:</p>
+    <br>
+    <ul>
+      <li>Namenskonventionen</li>
+      <li>Verdratung zwischen Klasse und DB</li>
+      <li>Pfade bestimmter Files</li>
+    </ul>
+  </section>
+  <section>
     <h2>Database Migrations</h2>
+    <ul>
+      <li>Ruby Code</li>
+        <p> > expressiveness</p>
+        <p> > abstraction</p>
+      <li>Timestamp</li>
+      <li>Rollback</li>
+    </ul>
   </section>
 </section>
+
+<!-- 3. Testen -->
 <section>
   <section>
-   <h1>4. Cucumber</h1>
+      <h2>3 .Testen</h2>
+  </section>
+  <section>
+      <h2>Warum ist es sinnvoll Software zu testen?</h2>
+  </section>
+  <section>
+    <ul>
+      <li>Software ist komplex</li>
+      <li>Für fehlerfreiere Software</li>
+      <li>Regressionsbugs vorbeugen</li>
+      <!-- requirements evolve during implementation -->
+      <li>Typisierungsfehlern vorbeugen (dyn. Sprachen)</li>
+      <!-- andere Leute können ins Project -->
+    </ul>
+  </section>
+  <section>
+    <h3>Integration Test</h3>
+    <ul>
+        <li>Full Stack</li>
+        <li>Verhalten des Systems wird von "außen" getestet</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Unit Test</h3>
+    <ul>
+        <li>isolierte, konkrete Funktionalitäten</li>
+        <li>Corner Cases</li>
+    </ul>
   </section>
 </section>
+
+<!-- 4. Cucumber -->
 <section>
   <section>
-    <h1>5. RSpec</h1>
+      <h2>4. Cucumber</h2>
+  </section>
+  <section>
+    <h3>Grundelemente</h3>
+    <ul>
+      <li>Feature: Beschreibung</li>
+      <li>Scenario: Fallbeschreibung</li>
+      <br>
+      <li>Given: Ausgangszustand</li>
+      <li>When: Aktion</li>
+      <li>Then: Ergebnis</li>
+      <li>And/But: Vorheriges Element</li>
+    </ul>
+  </section>
+  <section>
+    <p>features/serve_coffee.feature</p>
+    <pre><code data-trim contenteditable>
+      Feature: Serve coffee
+
+        Scenario: Buy last coffee
+          Given there are 1 coffees left in the machine
+            And I have deposited 1$
+          When I press the coffee button
+          Then I should be served a coffee
+    </code></pre>
+  </section>
+  <section>
+    <p>features/step_definitions/coffee_steps.rb</p>
+    <pre><code>
+      Given /there are (\d+) coffees left in the machine/ do |n|
+        @machine = Machine.new(n.to_i)
+      end
+    </code>
+    </pre>
+  </section>
+
+  <section>
+    <ul>
+      <li><a href="https://github.com/makandra/spreewald">Spreewald</a> - steps collection</li>
+      <li><a href="https://github.com/makandra/cucumber_factory">Cucumber Factory</a> - allows you to create ActiveRecord objects without steps </li>
+    </ul> 
   </section>
 </section>
+
+<!-- 5. Spec -->
 <section>
   <section>
-    <h1>6. TDD/BDD</h1>
+      <h2>5. RSpec</h2>
   </section>
   <section>
-    <h2>Ablauf</h2>
+    <ul>
+      <li>Describe: Methodenname</li>
+      <li>Context: Context</li>
+      <li>It: Beispiel</li>
+    </ul>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      describe MovieList do
+        context "when first created" do
+          it "is empty" do
+            movie_list = MovieList.new
+            movie_list.should be_empty
+          end
+        end
+      end
+    </code></pre>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      describe Stack do
+        before(:each) do
+          @stack = Stack.new
+          @stack.push :item
+        end
+      
+        context "#pop" do
+          it "returns the top element" do
+            @stack.pop.should == :item
+          end
+          it "removes the top element" do
+            @stack.pop
+            @stack.size.should == 0
+          end
+        end
+      end
+    </code></pre>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      Stack
+        #pop
+          returns the top element
+          removes the top element
+
+      Finished in 0.00157 seconds
+      2 examples, 0 failures
+    </code></pre>
+  </section>
+</section>
+
+<!-- 6. TDD -->
+<section>
+  <section>
+      <h2>6. Test Driven Development</h2>
+  </section>
+  <section id="fragments">
+    <h3>Grundprinzip</h3>
+    <ol>
+      <li class="fragment">Test schreiben</li>
+      <li class="fragment">Test failed</li>
+      <li class="fragment">Funktion implementieren bis Test erfolgreich ist</li>
+      <li class="fragment">wiederholen</li>
+    </ol>
+  </section>
+  <section>
+    <h3>Vorteile</h3>
+    <ul>
+      <li>Ziel immer klar</li>
+      <li>modularer Code</li>
+      <li>gute OO-Struktur durch Refactoring</li>
+      <li>minimale Implementierung</li>
+      <li>Workflow "führt" zum Ziel</li>
+    </ul>
+  </section>
+  <section>
     <p><img style="box-shadow: none;" src="media/CucCircle1.png" alt="Pic-RSpec-Buch"></p>
   </section>
-   <section>
-    <p><img style="box-shadow: none;" src="media/CucCircle2.png" alt="Pic-RSpec-Buch"></p>
-  </section>
   <section>
-    <h2>Charts</h2>
     <p><img style="box-shadow: none;" src="" alt="Chart-Pres"></p>
   </section>
 </section>
+
+<!-- 7. Workflow -->
+<section>
+    <section>
+        <h2>7. Workflow</h2>
+    </section>
+</section>
+
+<!-- 8.Quellen -->
 <section>
   <section>
-    <h1>7. Quellen</h1>
+    <h2>8. Quellen</h2>
     <ul>
       <li><p><a href="http://www.makandra.de">makandra.de</a> & <a href= "http://www.makandra.com">makandra.com</a></p></li>
       <li>Agile Web Development with Rails 4 - Sam Ruby, Dave Thomas, David Heinemeier Hansson</li>
@@ -141,11 +319,10 @@ title: CucumberRSpecRails
     </ul>
   </section>
 </section>
+
+<!-- 9.Fazit -->
 <section>
   <section>
-    <h1>Fazit</h1>
-  </section>
-  <section>
-    <p>ENDE</p>
+    <h2>9. Fazit</h2>
   </section>
 </section>

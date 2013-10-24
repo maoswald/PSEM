@@ -79,7 +79,7 @@ title: CucumberRSpecRails
     <h2>2. Ruby on Rails</h2>
   </section>
   <section>
-    <div>Ruby:</div>
+    <div>Ruby <img style="box-shadow: none;" src="media/ruby.png" alt=""></div>
     <ul>
       <li>höhere Programmiersprache</li>
       <li>interpretiert</li>
@@ -88,8 +88,15 @@ title: CucumberRSpecRails
       <li>funktional</li>
       <li>duck-typing</li>
     </ul>
-    <br>
-    <p>Rails: quelloffenes Web Application Framework</p>
+  </section>
+  <section>
+    <p>Rails <img style="box-shadow: none;" src="media/rails.png" alt=""></p>
+    <ul>
+      <li>Web-Framework</li>
+      <li>Open Source</li>
+      <li>Gutes System aus Bibliotheken</li>
+      <li>Hohe Produktivität</li>
+    </ul>
   </section>
   <section>
     <h2>Grundprinzipien</h2>
@@ -133,10 +140,10 @@ title: CucumberRSpecRails
 <!-- 3. Testen -->
 <section>
   <section>
-      <h2>3 .Testen</h2>
+    <h2>3 .Testen</h2>
   </section>
   <section>
-      <h2>Warum ist es sinnvoll Software zu testen?</h2>
+    <h2>Warum ist es sinnvoll Software mit Softwaretests zu testen?</h2>
   </section>
   <section>
     <ul>
@@ -146,20 +153,24 @@ title: CucumberRSpecRails
       <!-- requirements evolve during implementation -->
       <li>Typisierungsfehlern vorbeugen (dyn. Sprachen)</li>
       <!-- andere Leute können ins Project -->
+      <li>Automatisierte Qualitätskontrolle</li>
+      <p> > Kein händisches Testen</p>
+      <p> > Schnelles Feedback</p>
+      <p> >>>>> Haufige Releases</p>
     </ul>
   </section>
   <section>
     <h3>Integration Test</h3>
     <ul>
-        <li>Full Stack</li>
-        <li>Verhalten des Systems wird von "außen" getestet</li>
+      <li>Full Stack</li>
+      <li>Verhalten des Systems wird von "außen" getestet</li>
     </ul>
   </section>
   <section>
     <h3>Unit Test</h3>
     <ul>
-        <li>isolierte, konkrete Funktionalitäten</li>
-        <li>Corner Cases</li>
+      <li>isolierte, konkrete Funktionalitäten</li>
+      <li>Corner Cases</li>
     </ul>
   </section>
 </section>
@@ -237,7 +248,7 @@ title: CucumberRSpecRails
   </section>
   <section>
     <pre><code data-trim contenteditable>
-        describe Stack do
+      describe Stack do
         before(:each) do
           @stack = Stack.new
           @stack.push :item
@@ -252,7 +263,7 @@ title: CucumberRSpecRails
             @stack.size.should == 0
           end
         end
-        end
+      end
     </code></pre>
   </section>
   <section>
@@ -279,10 +290,11 @@ title: CucumberRSpecRails
       <li class="fragment">Test schreiben</li>
       <li class="fragment">Test failed</li>
       <li class="fragment">Funktion implementieren bis Test erfolgreich ist</li>
-      <li class="fragment">nächsten Test schreiben</li>
+      <li class="fragment">wiederholen</li>
     </ol>
   </section>
   <section>
+    <h3>Vorteile</h3>
     <ul>
       <li>Ziel immer klar</li>
       <li>modularer Code</li>
