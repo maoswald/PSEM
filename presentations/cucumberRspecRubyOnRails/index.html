@@ -79,8 +79,8 @@ title: CucumberRSpecRails
     <h2>2. Ruby on Rails</h2>
   </section>
   <section>
+    <div>Ruby:</div>
     <ul>
-      <p>Ruby:</p>
       <li>höhere Programmiersprache</li>
       <li>interpretiert</li>
       <li>Objektorientiert</li>
@@ -88,6 +88,7 @@ title: CucumberRSpecRails
       <li>funktional</li>
       <li>duck-typing</li>
     </ul>
+    <br>
     <p>Rails: quelloffenes Web Application Framework</p>
   </section>
   <section>
@@ -123,8 +124,6 @@ title: CucumberRSpecRails
       <li>Ruby Code</li>
         <p> > expressiveness</p>
         <p> > abstraction</p>
-        <li>Datenbankunabhängig</li>
-
       <li>Timestamp</li>
       <li>Rollback</li>
     </ul>
@@ -142,10 +141,10 @@ title: CucumberRSpecRails
   <section>
     <ul>
       <li>Software ist komplex</li>
-      <li>Fehlerfreiere Software</li>
+      <li>Für fehlerfreiere Software</li>
       <li>Regressionsbugs vorbeugen</li>
       <!-- requirements evolve during implementation -->
-      <li>Beugt Typisierungsfehlern vor (dyn. Sprachen)</li>
+      <li>Typisierungsfehlern vorbeugen (dyn. Sprachen)</li>
       <!-- andere Leute können ins Project -->
     </ul>
   </section>
@@ -155,10 +154,11 @@ title: CucumberRSpecRails
         <li>Full Stack</li>
         <li>Verhalten des Systems wird von "außen" getestet</li>
     </ul>
+    <br>
     <h3>Unit Test</h3>
     <ul>
         <li>isolierte, konkrete Funktionalitäten</li>
-        <li>Core Cases</li>
+        <li>Corner Cases</li>
     </ul>
   </section>
 </section>
@@ -169,20 +169,29 @@ title: CucumberRSpecRails
       <h2>4. Cucumber</h2>
   </section>
   <section>
+    <h3>Grundelemente</h3>
     <ul>
+      <li>Feature: Beschreibung</li>
+      <li>Scenario: Fall</li>
+      <br>
       <li>Given: Ausgangszustand</li>
       <li>When: Aktion</li>
       <li>Then: Ergebnis</li>
+      <li>And/But: Vorheriges Element</li>
     </ul>
   </section>
   <section>
     <pre><code data-trim contenteditable>
-      Scenario: add an item to the shopping cart
-      Given an article with the name "Nintendo Wii"
-      When I am on the homepage
-        And I follow "Nintendo Wii"
-        And I press "Add to cart"
-      Then I should see "Item was added to cart"
+      Feature: Serve coffee
+        In order to earn money
+        Customers should be able to 
+        buy coffee at all times
+
+        Scenario: Buy last coffee
+          Given there are 1 coffees left in the machine
+            And I have deposited 1$
+          When I press the coffee button
+          Then I should be served a coffee
     </code></pre>
   </section>
 </section>
@@ -200,7 +209,7 @@ title: CucumberRSpecRails
     </ul>
   </section>
   <section>
-    <pre><code data-trim>
+    <pre><code data-trim contenteditable>
       describe MovieList do
         context "when first created" do
           it "is empty" do
@@ -209,6 +218,49 @@ title: CucumberRSpecRails
           end
         end
       end
+    </code></pre>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      describe Stack do
+        before(:each) do
+          @stack = Stack.new
+          @stack.push :item
+        end
+      
+        describe "#peek" do
+          it "returns the top element" do
+            @stack.peek.should == :item
+          end
+          it "does not remove the top element" do
+            @stack.peek
+            @stack.size.should == 1
+          end
+        end
+        describe "#pop" do
+          it "returns the top element" do
+            @stack.pop.should == :item
+          end
+          it "removes the top element" do
+            @stack.pop
+            @stack.size.should == 0
+          end
+        end
+      end
+    </code></pre>
+  </section>
+  <section>
+    <pre><code data-trim contenteditable>
+      Stack
+        #peek
+          returns the top element
+          does not remove the top element
+        #pop
+          returns the top element
+          removes the top element
+          
+      Finished in 0.00157 seconds
+      4 examples, 0 failures
     </code></pre>
   </section>
 </section>
@@ -263,6 +315,6 @@ title: CucumberRSpecRails
 <!-- 9.Fazit -->
 <section>
   <section>
-    <h2>Fazit</h2>
+    <h2>9. Fazit</h2>
   </section>
 </section>
