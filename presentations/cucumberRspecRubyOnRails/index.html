@@ -154,7 +154,8 @@ title: CucumberRSpecRails
         <li>Full Stack</li>
         <li>Verhalten des Systems wird von "außen" getestet</li>
     </ul>
-    <br>
+  </section>
+  <section>
     <h3>Unit Test</h3>
     <ul>
         <li>isolierte, konkrete Funktionalitäten</li>
@@ -172,7 +173,7 @@ title: CucumberRSpecRails
     <h3>Grundelemente</h3>
     <ul>
       <li>Feature: Beschreibung</li>
-      <li>Scenario: Fall</li>
+      <li>Scenario: Fallbeschreibung</li>
       <br>
       <li>Given: Ausgangszustand</li>
       <li>When: Aktion</li>
@@ -183,9 +184,6 @@ title: CucumberRSpecRails
   <section>
     <pre><code data-trim contenteditable>
       Feature: Serve coffee
-        In order to earn money
-        Customers should be able to 
-        buy coffee at all times
 
         Scenario: Buy last coffee
           Given there are 1 coffees left in the machine
@@ -193,6 +191,13 @@ title: CucumberRSpecRails
           When I press the coffee button
           Then I should be served a coffee
     </code></pre>
+  </section>
+
+  <section>
+    <ul>
+      <li><a href="https://github.com/makandra/spreewald">Spreewald</a> - steps collection</li>
+      <li><a href="https://github.com/makandra/cucumber_factory">Cucumber Factory</a> - allows you to create ActiveRecord objects without steps </li>
+    </ul> 
   </section>
 </section>
 
@@ -222,22 +227,13 @@ title: CucumberRSpecRails
   </section>
   <section>
     <pre><code data-trim contenteditable>
-      describe Stack do
+        describe Stack do
         before(:each) do
           @stack = Stack.new
           @stack.push :item
         end
       
-        describe "#peek" do
-          it "returns the top element" do
-            @stack.peek.should == :item
-          end
-          it "does not remove the top element" do
-            @stack.peek
-            @stack.size.should == 1
-          end
-        end
-        describe "#pop" do
+        context "#pop" do
           it "returns the top element" do
             @stack.pop.should == :item
           end
@@ -246,21 +242,18 @@ title: CucumberRSpecRails
             @stack.size.should == 0
           end
         end
-      end
+        end
     </code></pre>
   </section>
   <section>
     <pre><code data-trim contenteditable>
       Stack
-        #peek
-          returns the top element
-          does not remove the top element
         #pop
           returns the top element
           removes the top element
-          
+
       Finished in 0.00157 seconds
-      4 examples, 0 failures
+      2 examples, 0 failures
     </code></pre>
   </section>
 </section>
@@ -270,18 +263,22 @@ title: CucumberRSpecRails
   <section>
       <h2>6. Test Driven Development</h2>
   </section>
-  <section>
+  <section id="fragments">
+    <h3>Grundprinzip</h3>
     <ol>
-      <li>Test schreiben</li>
-      <li>Test failed</li>
-      <li>Funktion implementieren bis Test erfolgreich</li>
+      <li class="fragment">Test schreiben</li>
+      <li class="fragment">Test failed</li>
+      <li class="fragment">Funktion implementieren bis Test erfolgreich ist</li>
+      <li class="fragment">nächsten Test schreiben</li>
     </ol>
   </section>
   <section>
     <ul>
+      <li>Ziel immer klar</li>
       <li>modularer Code</li>
       <li>gute OO-Struktur durch Refactoring</li>
       <li>minimale Implementierung</li>
+      <li>Workflow "führt" zum Ziel</li>
     </ul>
   </section>
   <section>
