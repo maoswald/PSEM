@@ -182,6 +182,7 @@ title: CucumberRSpecRails
     </ul>
   </section>
   <section>
+    <p>features/serve_coffee.feature</p>
     <pre><code data-trim contenteditable>
       Feature: Serve coffee
 
@@ -191,6 +192,15 @@ title: CucumberRSpecRails
           When I press the coffee button
           Then I should be served a coffee
     </code></pre>
+  </section>
+  <section>
+    <p>features/step_definitions/coffee_steps.rb</p>
+    <pre><code>
+      Given /there are (\d+) coffees left in the machine/ do |n|
+        @machine = Machine.new(n.to_i)
+      end
+    </code>
+    </pre>
   </section>
 
   <section>
